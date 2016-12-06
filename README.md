@@ -10,6 +10,7 @@ but **SHOULD** contains an information of correct structure:
 - [Small data dumb](#small-data-dumb)
 
 Please, see [total example](#total-example) for clarity.
+You can find full documentation and real projects on www.gitdata.net. Please use our contacts from offical site and [contacts](#contacts) block.
 
 -------------
 
@@ -235,3 +236,16 @@ return [
 ];
  
 ```
+
+-------------
+
+## Contacts
+- Offical sites: http://www.gitdata.net [EN] and www.gitdata.ru [RU]
+- Email: support@gitdata.net
+- Vkontakte: vk.com/gitdata
+- Facebook: facebook.com/groups/gitdata/
+- Twitter: twitter.com/gitdatanet
+- LinkedIn: linkedin.com/groups/8537332
+- Google+: plus.google.com/communities/107182608615502988258
+
+
