@@ -242,10 +242,10 @@ return [
 ## Contacts
 - Offical sites: http://www.gitdata.net [EN] and www.gitdata.ru [RU]
 - Email: support@gitdata.net
-- Vkontakte: vk.com/gitdata
-- Facebook: facebook.com/groups/gitdata/
-- Twitter: twitter.com/gitdatanet
-- LinkedIn: linkedin.com/groups/8537332
-- Google+: plus.google.com/communities/107182608615502988258
+- Vkontakte: https://vk.com/gitdata
+- Facebook: https://facebook.com/groups/gitdata
+- Twitter: https://twitter.com/gitdatanet
+- LinkedIn: https://linkedin.com/groups/8537332
+- Google+: https://plus.google.com/communities/107182608615502988258
 
 
