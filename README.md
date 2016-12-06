@@ -9,6 +9,8 @@ but **SHOULD** contains an information of correct structure:
     - [Constraints specification](#constraints-specification)
 - [Small data dumb](#small-data-dumb)
 
+- [Column types](#column-types)
+
 Please, see [total example](#total-example) for clarity.
 You can find full documentation and real projects on www.gitdata.net. Please use our contacts from offical site and [contacts](#contacts) block.
 
@@ -96,6 +98,35 @@ references | A reference for foreing keys | No
 
 ### Small data dumb
 > Containts records has unique key same as the tables's name and structure of columns same as specification or key-valued data.
+
+
+-------------
+
+## Column types
+> Most popular type are used in the specification. See ISO `SQL-2015`, `SQL-2008` and older documents. Also `SQL-92` as a basic specification.
+
+Code | Description
+-----|------------
+char | Character string, fixed length.
+string | Variable length character string, maximum length fixed.
+text | Big character text
+uuid | Unique computer generated character string
+integer | Represents an integer. The minimum and maximum values depend on the server
+smallint | Same as `integer` type except that it might hold a smaller range of values, depending on the server
+bigint | Same as `integer` type except that it might hold a larger range of values, depending on the server
+float | Approximate numerical, mantissa precision p. Precision is greater than or equal to 1 and the maximum precision depends on the server
+numeric | Exact numerical, precision p, scale s. The maximum precision depends on the server
+decimal | Exact numerical, precision p, scale s. A decimal number, that is a number that can have a decimal point in it. The size argument has two parts : precision and scale. The scale can not exceed the precision. Precision comes first, and a comma must separate from the scale argument
+money | Like `decimal`, used for finance values
+boolean | Stores truth values - either `true` or `false`.
+enum | String values from definited set
+date | Represents a date. Format: yyyy-mm-dd (ISO)
+time | Represents a date. Format: hh:mm:ss (ISO)
+datetime | Represents a date. Format: yyyy-mm-dd hh:mm:ss (ISO)
+timestamp | Represents a combination of DATE and TIME values separated by a space. Format: yyyy-mm-dd hh:mm:ss
+blob | Big binnary container
+json | Text in `json` format
+xml | Text in `xml` format
 
 
 -------------
