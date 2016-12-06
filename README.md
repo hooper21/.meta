@@ -1,4 +1,4 @@
-# Specification of gitData configuration
+# Specification of GitData project and data configuration
 A configuration file of your data **COULD** use next formats: JSON, XML or PHP (array confiration file like used by Laravel), 
 but **SHOULD** contains an information of correct structure:
 - [Information project block](#information-block)
