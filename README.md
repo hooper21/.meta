@@ -103,7 +103,7 @@ references | A reference for foreing keys | No
 ## Total example
 > Used PHP format of specification
 
-```
+```php
 <?php
 return [
  'code' => 'meta',
