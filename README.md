@@ -116,15 +116,15 @@ smallint | Same as `integer` type except that it might hold a smaller range of v
 bigint | Same as `integer` type except that it might hold a larger range of values, depending on the server
 float | Approximate numerical, mantissa precision p. Precision is greater than or equal to 1 and the maximum precision depends on the server
 numeric | Exact numerical, precision p, scale s. The maximum precision depends on the server
-decimal | Exact numerical, precision p, scale s. A decimal number, that is a number that can have a decimal point in it. The size argument has two parts : precision and scale. The scale can not exceed the precision. Precision comes first, and a comma must separate from the scale argument
+decimal | Exact numerical, precision p, scale s. A decimal number, that is a number that can have a decimal point in it. The size argument has two parts: precision and scale. The scale can not exceed the precision. Precision comes first, and a comma must separate from the scale argument
 money | Like `decimal`, used for finance values
 boolean | Stores truth values - either `true` or `false`.
 enum | String values from definited set
-date | Represents a date. Format: yyyy-mm-dd (ISO)
-time | Represents a date. Format: hh:mm:ss (ISO)
-datetime | Represents a date. Format: yyyy-mm-dd hh:mm:ss (ISO)
-timestamp | Represents a combination of DATE and TIME values separated by a space. Format: yyyy-mm-dd hh:mm:ss
-blob | Big binnary container
+date | Represents a date. Format: `yyyy-mm-dd` (ISO)
+time | Represents a date. Format: `hh:mm:ss` (ISO)
+datetime | Represents a date. Format: `yyyy-mm-dd hh:mm:ss` (ISO)
+timestamp | Represents a combination of `date` and `time` values separated by a space. Format: `yyyy-mm-dd hh:mm:ss`
+blob | Big binary container
 json | Text in `json` format
 xml | Text in `xml` format
 
