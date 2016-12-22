@@ -5,11 +5,14 @@ but **SHOULD** contains an information of correct structure:
 - [Database specification block](#database-specification-block)
   - [Table specification](#table-specification)
     - [Columns specification](#columns-specification)
-    - [Indeces specification](#indeces-specification)
+    - [Indexes specification](#indexes-specification)
     - [Constraints specification](#constraints-specification)
-- [Small data dumb](#small-data-dumb)
+- [Data preload block](#data-preload-block)
+  - [Key-valued data dumb](#key-valued-data-dumb)
+  - [Records data dumb](#records-data-dumb)
 
 - [Column types](#column-types)
+- [Derivative types](#derivative-types)
 
 Please, see [total example](#total-example) for clarity.
 You can find full documentation and real projects on www.gitdata.net. Please use our contacts from offical site and [contacts](#contacts) block.
@@ -23,6 +26,7 @@ Value | Description | Requeried
 ------|-------------|----------
 code | An unique code of GitData project | Yes
 name | A your of then project | Yes
+dataset | A name of dataset | Yes
 description | Full information of your project | No
 keywords | Keywords characterize your data | No
 license | Licence for publicated data and functionals | Yes
@@ -35,9 +39,10 @@ modified | Date when the specification was modified | No
 
 > For example:
 ```
- 'code' => 'database',
- 'name' => 'Databases',
- 'description' => 'Databases operations',
+ 'code' => 'gitdata',
+ 'name' => 'The GitData project',
+ 'description' => 'Some project of GitData including many datasets',
+ 'dataset' => 'Some dataset',
  'license' => 'MIT',
  'author' => 'GitData team',
  'homepage' => 'http://database.gitdata.net',
@@ -63,27 +68,28 @@ comment | A comment of table to save in database | No
 #### Columns specification
 > Each records has unique key same as the column name in the table.
 
-Value | Description | Requeried
-------|-------------|----------
-type | Specification of columns | Yes
-length | Maximal length of character values or precision for numerics | No
-scale | a scale of a numeric | No
-unsigned | Set unsigned numeric value | No
-increments | Set autoincrement value | No
-nullable | Show null values are avaliable | No
-default | A default value in cafe not set | No
-comment | A comment for the column in database | No
-primary | Set a primary index for table | No
-index | Used if columns should be personal indexed | No
-unique | Used for unique indexing, `index` no needed | No
+Value | Description | Requeried | Default
+------|-------------|-----------|---------
+type | Specification of columns | Yes | string
+length | Maximal length of characters | No | 255
+precision | Size of numerics | No | 10
+scale | a scale of a numeric | No | 2
+unsigned | Set unsigned numeric value | No | false
+increments | Set autoincrement value | No | false
+nullable | Show null values are avaliable | No | true
+default | A default value in cafe not set | No | 
+comment | A comment for the column in database | No | 
+primary | Set a primary index for table | No | false
+index | Used if columns should be personal indexed | No | false
+unique | Used for unique indexing, `index` no needed | No | false
 
-
-#### Indeces specification
+#### Indexes specification
 > Each records has unique key same as the index's name in the database, or can be absent.
 
 Value | Description | Requeried
 ------|-------------|----------
-columns | Set of indexing columnes | Yes
+type | A type of index (`index` or `primary`) | Yes
+column | Name of a column or set of indexing columns | Yes
 direction | A direction od indexing (`asc` or `desc`) | No
 
 #### Constraints specification
@@ -91,19 +97,15 @@ direction | A direction od indexing (`asc` or `desc`) | No
 
 Value | Description | Requeried
 ------|-------------|----------
-type | A type of index (`unique`, `primary` or `foreign`) | Yes
-columns | Set of indexing columnes | Yes
-references | A reference for foreing keys | No
-
-
-### Small data dumb
-> Containts records has unique key same as the tables's name and structure of columns same as specification or key-valued data.
-
+type | A type of constraint (`unique`, `foreign` or `check`) | Yes
+column | A dependent refer column or set of a group of columns | Yes
+table | Parent table wich contains records | No
+references | A column or a group of columns of parent table wich contains records | No
 
 -------------
 
 ## Column types
-> Most popular type are used in the specification. See ISO `SQL-2015`, `SQL-2008` and older documents. Also `SQL-92` as a basic specification.
+> Most popular types are used in the specification. See ISO `SQL-2015`, `SQL-2008` and older documents. Also `SQL-92` as a basic specification.
 
 Code | Description
 -----|------------
@@ -128,6 +130,25 @@ blob | Big binary container
 json | Text in `json` format
 xml | Text in `xml` format
 
+## Derivative types
+> Type wich are transforming to basic schema.
+
+Code | Transformation
+-----|------------
+foreign | transforms to `integer` with simple `index` and `constraint`. Must contain dataset of `constraint`
+increments | transforms to `integer` with `autoincrements` and `primary` index.
+
+
+-------------
+
+## Data preload block
+> Datasets wich should be preloaded
+
+### Key-valued data dumb
+> Containts records has unique key same as the tables's name and structure of columns same as specification or key-valued data.
+
+### Records data dumb
+> Data with the table structure.
 
 -------------
 
